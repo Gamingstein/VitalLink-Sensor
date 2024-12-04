@@ -122,8 +122,8 @@ class HealthMonitor:
             peaks = self.__find_peaks(ir_smoothed, min_distance)
             if len(peaks) > 1:
                 intervals = [(peaks[i] - peaks[i - 1]) / self.sample_rate for i in range(1, len(peaks))]
-                self.heart_rate = 60 / (sum(intervals) / len(intervals))  # Convert intervals to bpm
-        return self.heart_rate
+                heart_rate = 60 / (sum(intervals) / len(intervals))  # Convert intervals to bpm
+        return heart_rate
 
     def read_all(self):
             # Read all data and set the values in the class attributes

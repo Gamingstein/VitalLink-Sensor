@@ -16,7 +16,7 @@ def smooth_rainbow():
     for hue in range(0, 360, 1):  # Loop through hues (0-360)
         for i in range(NUM_PIXELS):
             # Calculate the RGB value for this hue
-            color = hsl_to_rgb(hue + (i * 360 // NUM_PIXELS), 1.0, 0.5)
+            color = hsl_to_rgb(hue + (i * 360 // NUM_PIXELS), 0.5, 0.3)
             np[i] = color
         np.write()  # Update the NeoPixel strip
         time.sleep(0.01)  # Adjust for smoothness, lower time for faster transition
